@@ -18,6 +18,11 @@ Route::get('/sample', function () {
     return view('sample');
 });
 
+//show all listings
 Route::get('/', [ListingController::class, 'index']);
-
+//show one listing
 Route::get('/listing/{listing}', [ListingController::class, 'show']);
+//show create form
+Route::get('/listings/create', [ListingController::class, 'create']);
+//store new listing
+Route::post('/listings', [ListingController::class, 'store']);

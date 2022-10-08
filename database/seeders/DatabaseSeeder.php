@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique, facere ipsam cupiditate illo sapiente voluptas neque eaque molestias delectus veritatis dicta quos facilis exercitationem qui nisi sed necessitatibus, amet eum?',
         ]); */
 
-        Listing::factory(6)->create();
+        Listing::factory(10)->create();
 
     }
 }
