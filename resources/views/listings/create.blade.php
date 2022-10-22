@@ -5,93 +5,44 @@
                 >
                     <header class="text-center">
                         <h2 class="text-2xl font-bold uppercase mb-1">
-                            Create a Gig
+                            Add New Product
                         </h2>
-                        <p class="mb-4">Post a gig to find a developer</p>
+                        <p class="mb-4">Post a new item to sell</p>
                     </header>
 
-                    <form method="post" action="/listings" enctype="multipart/form-data">
+                    <form method="post" action="/products" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-6">
                             <label
-                                for="company"
+                                for="product"
                                 class="inline-block text-lg mb-2"
-                                >Company Name</label
+                                >Product Name</label
                             >
                             <input
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
-                                name="company"
-                                value="{{old('company')}}"
+                                name="product_name"
+                                value="{{old('product')}}"
                             />
-                            @error('company')
-                                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                            @enderror
-                        </div>
-
-                        <div class="mb-6">
-                            <label for="title" class="inline-block text-lg mb-2"
-                                >Job Title</label
-                            >
-                            <input
-                                type="text"
-                                class="border border-gray-200 rounded p-2 w-full"
-                                name="title"
-                                placeholder="Example: Senior Laravel Developer"
-                                value="{{old('title')}}"
-                            />
-                            @error('title')
+                            @error('product_name')
                                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                             @enderror
                         </div>
 
                         <div class="mb-6">
                             <label
-                                for="location"
-                                class="inline-block text-lg mb-2"
-                                >Job Location</label
-                            >
-                            <input
-                                type="text"
-                                class="border border-gray-200 rounded p-2 w-full"
-                                name="location"
-                                placeholder="Example: Remote, Boston MA, etc"
-                                value="{{old('location')}}"
-                            />
-                            @error('location')
-                                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                            @enderror
-                        </div>
-
-                        <div class="mb-6">
-                            <label for="email" class="inline-block text-lg mb-2"
-                                >Contact Email</label
-                            >
-                            <input
-                                type="text"
-                                class="border border-gray-200 rounded p-2 w-full"
-                                name="email"
-                                value="{{old('email')}}"
-                            />
-                            @error('email')
-                                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                            @enderror
-                        </div>
-
-                        <div class="mb-6">
-                            <label
-                                for="website"
+                                for="price"
                                 class="inline-block text-lg mb-2"
                             >
-                                Website/Application URL
+                                Price
                             </label>
                             <input
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
-                                name="website"
-                                value="{{old('website')}}"
+                                name="price"
+                                value="{{old('price')}}"
                             />
-                            @error('website')
+                            @error('price')
                                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                             @enderror
                         </div>
@@ -114,7 +65,7 @@
 
                         <div class="mb-6">
                             <label for="logo" class="inline-block text-lg mb-2">
-                                Company Logo
+                                Product Image
                             </label>
                             <input
                                 type="file"
@@ -131,13 +82,12 @@
                                 for="description"
                                 class="inline-block text-lg mb-2"
                             >
-                                Job Description
+                                Product Description
                             </label>
                             <textarea
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="description"
                                 rows="10"
-                                placeholder="Include tasks, requirements, salary, etc"
                             >{{old('description')}}</textarea>
                             @error('description')
                                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -148,7 +98,7 @@
                             <button
                                 class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
                             >
-                                Create Gig
+                                Save Item
                             </button>
 
                             <a href="/" class="text-black ml-4"> Back </a>

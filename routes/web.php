@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Listing;
-use App\Http\Controllers\ListingController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,10 +19,23 @@ Route::get('/sample', function () {
 });
 
 //show all listings
-Route::get('/', [ListingController::class, 'index']);
+//Route::get('/', [ListingController::class, 'index']);
 //show one listing
-Route::get('/listing/{listing}', [ListingController::class, 'show']);
+//Route::get('/listing/{listing}', [ListingController::class, 'show']);
 //show create form
-Route::get('/listings/create', [ListingController::class, 'create']);
+//Route::get('/listings/create', [ListingController::class, 'create']);
 //store new listing
-Route::post('/listings', [ListingController::class, 'store']);
+//Route::post('/listings', [ListingController::class, 'store']);
+
+//show all products
+Route::get('/', [ProductController::class, 'index']);
+//show one listing
+Route::get('/product/{product}', [ProductController::class, 'show']);
+//add to cart
+Route::post('/product/{product}', [ProductController::class, 'add']);
+//show create form
+Route::get('/products/create', [ProductController::class, 'create']);
+//store new product
+Route::post('/products', [ProductController::class, 'store']);
+//get cart
+Route::get('/carts', [ProductController::class, 'cart']);
