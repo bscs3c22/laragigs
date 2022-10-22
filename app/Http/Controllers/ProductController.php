@@ -54,7 +54,7 @@ class ProductController extends Controller
         ]);
 
         if($request->hasFile('logo')){
-            $formFields['logo'] = $request->file('logo')->store('logos');
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
 
         Product::create($formFields);
