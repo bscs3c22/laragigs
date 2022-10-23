@@ -16,7 +16,7 @@
                             <label
                                 for="product"
                                 class="inline-block text-lg mb-2"
-                                >Product Name</label
+                                >Item Name</label
                             >
                             <input
                                 type="text"
